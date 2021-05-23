@@ -1,0 +1,9 @@
+included:
+
+excluded:
+- Pods
+- Carthage
+
+disabled_rules:
+- trailing_whitespace
+

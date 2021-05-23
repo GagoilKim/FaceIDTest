@@ -4,16 +4,16 @@
 //
 //  Created by Donghyun Kim on 2021/05/23.
 //
+// Reference: https://www.hackingwithswift.com/books/ios-swiftui/using-touch-id-and-face-id-with-swiftui
 
-import SwiftUI
 import LocalAuthentication
-
+import SwiftUI
 
 struct ContentView: View {
     @State private var isUnlocked = false
     var body: some View {
-        VStack{
-            if isUnlocked{
+        VStack {
+            if isUnlocked {
                 Text("Unlocked")
             } else {
                 Text("Locked")
@@ -23,21 +23,19 @@ struct ContentView: View {
             authentication()
         })
     }
-    func authentication(){
+
+    func authentication() {
         let context = LAContext()
         var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             let reason = "We need to unlock your data"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){ success, authenticationError in
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
                 DispatchQueue.main.async {
-                    if success{
+                    if success {
                         isUnlocked = true
-                    }else{
-                        
-                    }
+                    } else {}
                 }
-                
             }
         }
     }

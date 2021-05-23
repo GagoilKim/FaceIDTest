@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D422F0ADAEB25ABD85FE4471 /* Pods_FaceIDTeset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6AA6FA975DDC3BC62BBEB /* Pods_FaceIDTeset.framework */; };
 		E32137F2265A25C900CEA312 /* FaceIDTesetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32137F1265A25C900CEA312 /* FaceIDTesetApp.swift */; };
 		E32137F4265A25C900CEA312 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32137F3265A25C900CEA312 /* ContentView.swift */; };
 		E32137F6265A25CC00CEA312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32137F5265A25CC00CEA312 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10C6AA6FA975DDC3BC62BBEB /* Pods_FaceIDTeset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceIDTeset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB0BA2D3691207501831C04 /* Pods-FaceIDTeset.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceIDTeset.release.xcconfig"; path = "Target Support Files/Pods-FaceIDTeset/Pods-FaceIDTeset.release.xcconfig"; sourceTree = "<group>"; };
+		CC7E1DC56075E4FF8B31F9B9 /* Pods-FaceIDTeset.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceIDTeset.debug.xcconfig"; path = "Target Support Files/Pods-FaceIDTeset/Pods-FaceIDTeset.debug.xcconfig"; sourceTree = "<group>"; };
 		E32137EE265A25C900CEA312 /* FaceIDTeset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIDTeset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32137F1265A25C900CEA312 /* FaceIDTesetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDTesetApp.swift; sourceTree = "<group>"; };
 		E32137F3265A25C900CEA312 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,17 +31,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D422F0ADAEB25ABD85FE4471 /* Pods_FaceIDTeset.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A59B58B78757BF35C291941 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC7E1DC56075E4FF8B31F9B9 /* Pods-FaceIDTeset.debug.xcconfig */,
+				7EB0BA2D3691207501831C04 /* Pods-FaceIDTeset.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1396DCB27B98F2BB9998445 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10C6AA6FA975DDC3BC62BBEB /* Pods_FaceIDTeset.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E32137E5265A25C900CEA312 = {
 			isa = PBXGroup;
 			children = (
 				E32137F0265A25C900CEA312 /* FaceIDTeset */,
 				E32137EF265A25C900CEA312 /* Products */,
+				5A59B58B78757BF35C291941 /* Pods */,
+				E1396DCB27B98F2BB9998445 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,9 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E32137FD265A25CC00CEA312 /* Build configuration list for PBXNativeTarget "FaceIDTeset" */;
 			buildPhases = (
+				561D92814BFC6E707924F1E8 /* [CP] Check Pods Manifest.lock */,
+				E3213803265A36A600CEA312 /* ShellScript */,
 				E32137EA265A25C900CEA312 /* Sources */,
 				E32137EB265A25C900CEA312 /* Frameworks */,
 				E32137EC265A25C900CEA312 /* Resources */,
+				E3213800265A2DEE00CEA312 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		561D92814BFC6E707924F1E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceIDTeset-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3213800265A2DEE00CEA312 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		E3213803265A36A600CEA312 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E32137EA265A25C900CEA312 /* Sources */ = {
@@ -264,6 +350,7 @@
 		};
 		E32137FE265A25CC00CEA312 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC7E1DC56075E4FF8B31F9B9 /* Pods-FaceIDTeset.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +373,7 @@
 		};
 		E32137FF265A25CC00CEA312 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB0BA2D3691207501831C04 /* Pods-FaceIDTeset.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
